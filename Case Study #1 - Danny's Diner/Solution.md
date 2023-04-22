@@ -262,6 +262,7 @@ Before becoming members,
      	 ON s.product_id = me.product_id
       INNER JOIN dannys_diner.members m
          ON s.customer_id = m.customer_id
+      WHERE EXTRACT("MONTH" FROM s.order_date) = '01'
       GROUP BY s.customer_id
       ORDER BY s.customer_id;
 #### Answer
@@ -269,9 +270,9 @@ Before becoming members,
     | customer_id | total_points       |
     |-------------|--------------------|
     |           A |               1370 |
-    |           B |                940 |
+    |           B |                820 |
 - Total points for Customer A is 1,370.
-- Total points for Customer B is 940.
+- Total points for Customer B is 820 .
 ***
 
 ## BONUS QUESTIONS
